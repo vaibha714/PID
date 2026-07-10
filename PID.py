@@ -1,9 +1,3 @@
-"""
-Built a PID control loop to simulate cruise control for a typical sedan. Calculated drag and rolling friciton to determine engine power required to maintain constant
-speed. Added random error to my velocity to simulate bumps or random obstacles during a drive. Built a class for a car and the PID. Used matplotlib to graph the PID
-system and the setpoint. Designed a custom GUI to allow the user to actively update the Kp, Ki, Kd, setpoint, and inital velocity. 
-"""
- 
 import random
 import numpy as np
 import tkinter as tk
@@ -61,11 +55,8 @@ def update_plant(kp,ki,kd,setpoint,velocity):
     pid = PID(kp, ki, kd, setpoint)
     car = Car()
     duration = 20
-
-    #2500, 50, 20, 55
     
     current_velocity = velocity
-
     history_speed = [current_velocity]
 
     for _ in range(int(duration/dt)):
